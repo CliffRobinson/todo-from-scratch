@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "nodemon server/index.js"
+    "dev": "nodemon server/index.js",
+    "rebootDB": "yarn knex migrate:rollback && yarn knex migrate:latest && yarn knex seed:run"
   },
   "dependencies": {
     "express": "^4.17.1",

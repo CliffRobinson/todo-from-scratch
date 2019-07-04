@@ -8,6 +8,7 @@ exports.up = function(knex) {
     table.boolean('has_notes')
     table.string('notes') //nullable?
     table.integer('repetitions')
+    table.integer('repetitions_completed')
     table.boolean('has_deadline')
     table.timestamp('deadline') //nullable?
   })
