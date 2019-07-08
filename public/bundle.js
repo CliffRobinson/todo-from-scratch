@@ -28755,6 +28755,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -28763,29 +28765,58 @@ var _reactRedux = __webpack_require__(25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Current(props) {
-    console.log(props);
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'h2',
-            null,
-            'Current Tasks!'
-        ),
-        props.current.map(function (task) {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Current = function (_React$Component) {
+    _inherits(Current, _React$Component);
+
+    function Current() {
+        _classCallCheck(this, Current);
+
+        return _possibleConstructorReturn(this, (Current.__proto__ || Object.getPrototypeOf(Current)).apply(this, arguments));
+    }
+
+    _createClass(Current, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            //this.props.dispatch(getRats())
+            console.log("Tiem for taks");
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            console.log(this.props);
+            var current = this.props.current;
+
             return _react2.default.createElement(
                 'div',
                 null,
                 _react2.default.createElement(
-                    'h3',
+                    'h2',
                     null,
-                    task.description
-                )
+                    'Current Tasks!'
+                ),
+                current.map(function (task) {
+                    return _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                            'h3',
+                            null,
+                            task.description
+                        )
+                    );
+                })
             );
-        })
-    );
-}
+        }
+    }]);
+
+    return Current;
+}(_react2.default.Component);
 
 var mapCateToProps = function mapCateToProps(_ref) {
     var current = _ref.current;
