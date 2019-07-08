@@ -5,14 +5,16 @@
   "author": "CliffRobinson <Clifford.F.Robinson@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js",
-    "rebootDB": "yarn knex migrate:rollback && yarn knex migrate:latest && yarn knex seed:run"
+    "start": "webpack && node server",
+    "dev": "webpack && nodemon server ",
+    "rebootDB": "yarn knex migrate:rollback && yarn knex migrate:latest && yarn knex seed:run",
+    "webpack": "webpack"
   },
   "dependencies": {
     "express": "^4.17.1",
     "knex": "^0.18.2",
     "nodemon": "^1.19.1",
-    "sqlite3": "^4.0.9"
+    "sqlite3": "^4.0.9",
+    "webpack": "^2.3.3"
   }
 }
