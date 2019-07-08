@@ -9,4 +9,13 @@ router.get("/", (req, res) => {
         })
 })
 
+router.post("/", (req, res) => {
+    const task = req.body
+    console.log(`Task: ${task}`)
+    currentDB.addCurrent(task)
+        .then (result => {
+            res.json(result)
+        })
+})
+
 module.exports = router

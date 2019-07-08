@@ -5,7 +5,12 @@ function getCurrent() {
     return conn('current')
 }
 
+function addCurrent(task) {
+    return conn('current')
+        .insert(task)
+}
 
 module.exports = {
-    getCurrent
+    getCurrent,
+    addCurrent
 }
