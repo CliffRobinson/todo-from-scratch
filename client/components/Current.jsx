@@ -2,11 +2,11 @@ import React from 'react'
 
 import {connect} from 'react-redux'
 
-
+import {getCurrent} from '../api/current'
 
 class Current extends React.Component {
     componentDidMount(){
-        //this.props.dispatch(getRats())
+        this.props.dispatch(getCurrent())
         console.log("Tiem for taks")
     }
 
