@@ -7,10 +7,12 @@ exports.up = function(knex) {
     table.integer('frequency')
     table.boolean('has_notes')
     table.string('notes') //nullable?
-    table.integer('repetitions')
-    table.integer('repetitions_completed')
+    table.boolean('completed')
     table.boolean('has_deadline')
     table.timestamp('deadline') //nullable?
+    table.boolean('has_children')
+    table.boolean('has_parent')
+    table.integer('parent')
   })
 };
 

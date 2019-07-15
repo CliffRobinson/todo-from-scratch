@@ -1,5 +1,5 @@
 import request from 'superagent'
-
+import {receiveCurrent} from '../actions/current'
 
 
 export function getCurrent() {
@@ -9,6 +9,7 @@ export function getCurrent() {
             .then(res => {
                 console.log(`api/GetCurrent result is:`)
                 console.log(res.body)
+                dispatch(receiveCurrent(res.body))
             })
     }
 }
